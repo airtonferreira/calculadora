@@ -12,19 +12,40 @@
 		<script type="text/javascript">
 			function calcular(){
 				var operacao = document.getElementById('operacao').value;
+
+				var num1 = document.getElementById('num1').value;
+				var num2 = document.getElementById('num2').value;
+
+				num1 = parseFloat(num1);
+				num2 = parseFloat(num2);
+
+				if(num1 == '' || num1 == null){
+					alert('Por favor, digite um número válido.');
+					return false;
+				}
+				if(num2 == '' || num2 == null){
+					alert('Por favor, digite um número válido.');
+					return false;
+				}
+
+				var resultado = null;
 				
 				switch(operacao){
 
 					case '1':  //Subtração
+						resultado = num1 - num2;
 						break;
 					
 					case '2': //adição
+						resultado = num1 + num2;
 						break; 
 
 					case '3': //multiplicação
+						resultado = num1 * num2;
 						break;
 					
 					case '4': //divisão
+						resultado = num1 / num2;
 						break;
 
 					default:
@@ -32,7 +53,7 @@
 
 				}
 
-				alert(operacao);
+				document.getElementById('resultado').value = resultado;
 			}
 			
 		</script>
@@ -52,7 +73,7 @@
 				<div style="padding-top: 20px; padding-bottom: 20px; margin: 15px; 
 				border-radius: 10px;" class="bg-dark col-sm" align="center"> 
 					<div class="col-md-4">
-						<input type="text" class="form-control" placeholder="Digite um número" />
+						<input id="num1" type="text" class="form-control" placeholder="Digite um número" />
 					</div>
 
 					<br>
@@ -70,7 +91,7 @@
 					<br>
 
 					<div class="col-md-4">
-						<input type="text" class="form-control" placeholder="Digite um número"/>
+						<input id="num2" type="text" class="form-control" placeholder="Digite um número"/>
 					</div>
 
 					<br>
@@ -89,7 +110,7 @@
 				<div class="card-body">
 					<div class="well">
 						<p style="color: white;">Resultado: </p>
-						<input type="text" class="form-control col-md-4" readonly/>
+						<input id="resultado" type="text" class="form-control col-md-4" readonly/>
 					</div>
 				</div>
 			</div>
