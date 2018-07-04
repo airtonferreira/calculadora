@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Calculadora</title>
+
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+		
+		<script type="text/javascript">
+			function calcular(){
+				var operacao = document.getElementById('operacao').value;
+				
+				switch(operacao){
+
+					case '1':  //Subtração
+						break;
+					
+					case '2': //adição
+						break; 
+
+					case '3': //multiplicação
+						break;
+					
+					case '4': //divisão
+						break;
+
+					default:
+						alert('A opção selecionada é inválida!');
+
+				}
+
+				alert(operacao);
+			}
+			
+		</script>
+
+	</head>
+
+	<body>
+		
+		<div class="container">
+			<div class="jumbotron p-3 mb-2 bg-dark text-white" style="border-radius: 0px 0px 10px 10px;" align="center">
+				<h1 style="color: white;">Calculadora Básica</h1>
+			</div>
+
+			<hr>
+
+			<div class="row">
+				<div style="padding-top: 20px; padding-bottom: 20px; margin: 15px; 
+				border-radius: 10px;" class="bg-dark col-sm" align="center"> 
+					<div class="col-md-4">
+						<input type="text" class="form-control" placeholder="Digite um número" />
+					</div>
+
+					<br>
+
+					<div class="col-md-4">
+						<select id="operacao" class="form-control">
+							<option value="">--Selecione uma operação</option>
+							<option value="1">Subtração</option>
+							<option value="2">Adição</option>
+							<option value="3">Multiplicação</option>
+							<option value="4">Divisão</option>
+						</select>
+					</div>
+
+					<br>
+
+					<div class="col-md-4">
+						<input type="text" class="form-control" placeholder="Digite um número"/>
+					</div>
+
+					<br>
+
+					<div class="col-md-4">
+						<button type="button" class="btn btn-lg btn-secondary pull-right" onclick="calcular()">Calcular</button>
+					</div>
+
+				</div>
+				
+			</div>
+
+			<hr/>
+
+			<div class="card bg-dark col-sm" align="center" style="border-radius: 10px; margin-inline-start: 10px">
+				<div class="card-body">
+					<div class="well">
+						<p style="color: white;">Resultado: </p>
+						<input type="text" class="form-control col-md-4" readonly/>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>
